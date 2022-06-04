@@ -1,9 +1,9 @@
 {
-    "name": "scngn/XmlService",
-    "description": "Laravel Xml entegrasyonu modülü",
+    "name": "scngn/xmlservice",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Scngn\\XmlService\\": "src/"
+            "Scngn\\Xmlservice\\": "src/"
         }
     },
     "authors": [
