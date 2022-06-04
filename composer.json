@@ -1,9 +1,9 @@
 {
-    "name": "scngn/xmlservice",
+    "name": "scngnr/xmlservice",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Scngn\\Xmlservice\\": "src/"
+            "Scngnr\\Xmlservice\\": "src/"
         }
     },
     "authors": [
