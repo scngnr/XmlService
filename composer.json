@@ -1,0 +1,16 @@
+{
+    "name": "scngn/XmlService",
+    "description": "Laravel Xml entegrasyonu modülü",
+    "autoload": {
+        "psr-4": {
+            "Scngn\\XmlService\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "scngnr",
+            "email": "scngnr@gmail.com"
+        }
+    ],
+    "require": {}
+}
