@@ -6,6 +6,13 @@
             "Scngnr\\Xmlservice\\": "src/"
         }
     },
+    "extra": {
+  "laravel": {
+    "providers": [
+      "Scngnr\\Xmlservice\\Provider"
+    ]
+  }
+},
     "authors": [
         {
             "name": "scngnr",
