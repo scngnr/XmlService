@@ -7,9 +7,9 @@ use Automattic\WooCommerce\Client;
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use Scngnr\Mdent\Xmlentegrasyon\Models\XmlKategori;
-class XmlKategoriController extends Controller
+
+class Kategori extends Controller
 {
-  //Ürünler kategori agacından xml kategoriler oluşturulur.
   public function xmlKategorileBul(Request $request){
 
     $urunKategorileri = Urunler::all();
@@ -66,9 +66,5 @@ class XmlKategoriController extends Controller
       }
 
     }
-  }
-
-  public function xmlProductKategoriBul(){
-
   }
 }
