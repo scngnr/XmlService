@@ -3,24 +3,29 @@
 namespace Scngnr\XmlService\Http\Controllers;
 
 use Scngnr\Xmlservice\Models\XmlService;
-use Scngnr\Xmlservice\Models\en_category_info as Cat;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
-use IS\PazarYeri\N11\N11Client;
-use Scngnr\XmlService\Events;
-use Illuminate\Http\Request;
-
-use App\Models\Pazaryeri;
-use App\Models\Urunler;
-use App\Models\Order;
-use Carbon\Carbon;
-
-use Scngnr\Product\Models\en_product;
 use Scngnr\Product\Product;
-use Scngnr\Xmlservice\Models\XmlKategori;
+use App\Http\Controllers\Controller;
 
 class XmlAddProduct extends Controller
 {
+
+  /**
+  *
+  *
+  *
+  *
+  *
+  */
+
+  public function xmlTarama(){
+
+      $xmlService   = XmlService::all();
+      for ($i=0; $i < count($xmlService); $i++) {
+        $this->XmlAddProduct($xmlService[$i]->id);
+      }
+  }
+
+
   /**
   *
   *****************************************************************************
@@ -28,7 +33,7 @@ class XmlAddProduct extends Controller
   * 1. databaseXmlKayit metodu Yeni xml eklemek için kullanılacaktır.
   * 2.  Veritabanından ilgili xml bilgileri alınır.
   * 3.  Xml içerisinde ürünler veritabanındaki bilgiler ile taranır.
-  * 4.  Ürünler @param Product-Sınıfı Kullanılarak Veritabanına kayıt edilir.
+  * 4.  Ürünler @service Product-Sınıfı Kullanılarak Veritabanına kayıt edilir.
   *
   * @param xmlName
   * @param xmlink
@@ -69,7 +74,7 @@ class XmlAddProduct extends Controller
                 }
               }
             }
-            $product->productSaves($databaseUrun['stockCode'],$databaseUrun,$xmlService->xmlAdi);
+            $product->product->product($databaseUrun['stockCode'],$databaseUrun,$xmlService->xmlAdi);
         }
       }else {
         //Xml İkinci Array Key değerini ve Value $xmlKey değişkenine aktarma
@@ -82,9 +87,9 @@ class XmlAddProduct extends Controller
           }
       }
     }
-    $xmlKategoris = new \Scngnr\XmlService\Http\Controllers\XmlKategoriBul();
-    $xmlKategorileBul->xmlKategorileBul();
 
     return redirect()->back();
   }
+
+
 }
